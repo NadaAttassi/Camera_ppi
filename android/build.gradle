@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 33 // Adjust to the SDK version you're working with
+
+    namespace 'com.example.camera'  // Add this line for the namespace
+
+    defaultConfig {
+        applicationId "com.example.camera"  // Your application ID
+        minSdkVersion 21  // Adjust to your minSdkVersion
+        targetSdkVersion 33  // Adjust to your targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"  // Increase heap size if necessary
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'  // Correct AndroidX dependency
+    // Add your other dependencies here
+}
